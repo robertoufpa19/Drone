@@ -24,18 +24,7 @@ class Matrix3{
 		return outputMatrix
 	}
 
-	stringify(){
-
-		let outputString = "";
-
-		for(let row = 0; row < this.array.length; row++ ){
-			for(let col = 0; col < this.array[0].length; col++ ){
-				outputString += this.array[row][col] + " ";
-			}
-			outputString += "\n ";
-		}
-		return outputString;
-	}
+	
 
 	getOutputArray(){
 		return Array(this.array[0][0], this.array[1][0], this.array[2][0], 
@@ -69,7 +58,9 @@ function GetTransform( positionX, positionY, rotation, scale )
 // A transformação retornada primeiro aplica trans1 e depois trans2.
 function ApplyTransform( trans1, trans2 )
 {
-	let trans1Matrix = new Matrix3(	trans1[0], trans1[3], trans1[6],
+
+	
+let trans1Matrix = new Matrix3(	trans1[0], trans1[3], trans1[6],
 		trans1[1], trans1[4], trans1[7],
 		trans1[2], trans1[5], trans1[8] ); 
 let trans2Matrix = new Matrix3(	trans2[0], trans2[3], trans2[6],
