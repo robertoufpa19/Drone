@@ -53,17 +53,11 @@ function GetTransform( positionX, positionY, rotation, scale )
 
 	const theta = rotation * (Math.PI / 180);
 
-	let rotateMatrix = new Matrix3(		Math.cos(theta), -Math.sin(theta), 0, 
-										Math.sin(theta), Math.cos(theta), 0, 
-										0, 0, 1);
+	let rotateMatrix = new Matrix3(		Math.cos(theta), -Math.sin(theta), 0, 	Math.sin(theta), Math.cos(theta), 0, 	0, 0, 1);
 
-	let scaleMatrix = new Matrix3(	scale,0,0,
-									0,scale,0,
-									0,0,1);
+	let scaleMatrix = new Matrix3(	scale,0,0,  0,scale,0,	0,0,1);
 	
-	let translateMatrix = new Matrix3(1,0, positionX, 
-										0,1, positionY,
-										0,0,1);
+	let translateMatrix = new Matrix3(1,0, positionX, 0,1, positionY, 0,0,1);
 
 	outputMatrix = translateMatrix.matrixMultiplication(rotateMatrix.matrixMultiplication(scaleMatrix));
 
